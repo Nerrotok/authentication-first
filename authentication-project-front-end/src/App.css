@@ -1,0 +1,59 @@
+.navigation--container {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid;
+  border-top: solid;
+  padding: 12px;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.navigation--link {
+  text-decoration: none;
+  color: black;
+}
+
+.navigation--link:hover {
+  text-decoration: underline;
+}
+
+.App--container {
+  margin: 96px;
+}
+
+.Reg--button,
+.Login--button {
+  margin-top: 24px;
+}
+
+.CredList--table,
+.CredList--thead {
+  text-align: center;
+  padding: 12px;
+  gap: 56px;
+  width: 100%;
+}
+
+.CredList--thead {
+  border-bottom: solid;
+}
+
+.CredList--td {
+  border: solid;
+  padding: 24px;
+}
+
+.CredList--container-row {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+
+.CredList--button-getCreds {
+  margin-top: 24px;
+}
+
+.CredList--heading {
+  text-decoration: underline;
+}
