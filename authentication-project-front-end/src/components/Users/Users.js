@@ -25,12 +25,14 @@ class Users extends React.Component {
     const { permissions, token } = this.props;
     const { selectedAction } = this.state;
 
-    if (permissions !== "admin") {
+    if (token === "") {
+      return <h1>Please login</h1>;
+    } else if (permissions !== "admin") {
       return (
         <div className="Users--container">
-          <h3 className="Users--heading">
+          <h1 className="Users--heading">
             This functionality is only available to admins
-          </h3>
+          </h1>
         </div>
       );
     }

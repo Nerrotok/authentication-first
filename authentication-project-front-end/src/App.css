@@ -22,6 +22,10 @@
   margin: 96px;
 }
 
+.Logout--button {
+  margin-bottom: 24px;
+}
+
 .Reg--button,
 .Login--button {
   margin-top: 24px;

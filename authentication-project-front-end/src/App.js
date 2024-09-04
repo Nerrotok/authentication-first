@@ -1,9 +1,10 @@
 import "./App.css";
 import Reg from "./components/Reg";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import CredList from "./components/CredList/CredList";
 import Users from "./components/Users/Users";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import React from "react";
 
@@ -12,23 +13,23 @@ function App() {
   const [userInfo, setUserInfo] = React.useState(() => {
     const storedUserInfo = localStorage.getItem("userInfo");
     // JSON returns
-    return storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    return storedUserInfo ? JSON.parse(storedUserInfo) : [];
   });
 
   const [token, setToken] = React.useState(
-    () => localStorage.getItem("token") || null
+    () => localStorage.getItem("token") || ""
   );
 
   const [usableDivs, setUsableDivs] = React.useState(() => {
     const storedUsableDivs = localStorage.getItem("usableDivs");
     // JSON returns
-    return storedUsableDivs ? JSON.parse(storedUsableDivs) : null;
+    return storedUsableDivs ? JSON.parse(storedUsableDivs) : [];
   });
 
   const [usableOrgUnits, setUsableOrgUnits] = React.useState(() => {
     const storedUsableOrgUnits = localStorage.getItem("usableOrgUnits");
     // JSON returns
-    return storedUsableOrgUnits ? JSON.parse(storedUsableOrgUnits) : null;
+    return storedUsableOrgUnits ? JSON.parse(storedUsableOrgUnits) : [];
   });
 
   // When state changes, update local storage
@@ -55,7 +56,15 @@ function App() {
   return (
     <div className="App--container">
       <h1>Cool Tech Login Info App</h1>
+
       <Navigation />
+      <Logout
+        userName={userInfo.name}
+        setUserInfo={setUserInfo}
+        setToken={setToken}
+        setUsableDivs={setUsableDivs}
+        setUsableOrgUnits={setUsableOrgUnits}
+      />
       <Routes>
         <Route
           exact

@@ -79,11 +79,11 @@ class UsersPerm extends React.Component {
           >
             <option value="">Select Permission</option>
             <option value="normal">Normal</option>
-            <option value="manage">Manage</option>
+            <option value="manage">Management</option>
             <option value="admin">Admin</option>
           </select>
           <br />
-          <button type="submit">Submit Permission</button>
+          <button type="submit">Change Permissions</button>
         </form>
       </div>
     );

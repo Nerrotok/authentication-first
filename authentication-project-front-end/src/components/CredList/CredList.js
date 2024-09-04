@@ -119,10 +119,10 @@ class CredList extends React.Component {
     const { creds, token, orgUnit, div, divisions, loaded } = this.state;
     let editOption;
 
-    if (!token) {
+    if (token === "") {
       return (
         <div className="CredList--container">
-          <h1>Please login and come back</h1>
+          <h1>Please login</h1>
         </div>
       );
     } else if (!loaded) {
@@ -134,7 +134,7 @@ class CredList extends React.Component {
     if (permissions === "admin" || permissions === "manage") {
       editOption = <option value="edit">Edit Credentials</option>;
     } else {
-      editOption = <option>Unavailable</option>;
+      editOption = <option>Edit Credentials (Unavailable)</option>;
     }
 
     return (
