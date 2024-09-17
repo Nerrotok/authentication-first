@@ -1,17 +1,43 @@
+/* Colours: #118AB2 and #EE6C4D 
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+General styles: 
+*/
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  border-bottom: 8px solid #118ab2;
+  min-height: 100vh;
+}
+
 .navigation--container {
   width: fit-content;
   display: flex;
   flex-direction: row;
-  border-bottom: solid;
-  border-top: solid;
+  border-bottom: solid #ee6c4d;
+  border-top: solid #ee6c4d;
   padding: 12px;
   gap: 12px;
-  margin-bottom: 24px;
 }
 
 .navigation--link {
   text-decoration: none;
-  color: black;
+  color: #343a40;
 }
 
 .navigation--link:hover {
@@ -20,15 +46,70 @@
 
 .App--container {
   margin: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.App--heading {
+  color: #118ab2;
 }
 
 .Logout--button {
-  margin-bottom: 24px;
+  font-weight: bold;
+  padding: 12px;
+  width: 100px;
+  background-color: #ee6c4d;
+  border-radius: 12px;
+  border: none;
+}
+
+.Logout--button:hover {
+  background-color: #ce5f43;
+  border-color: #ce5f43;
 }
 
 .Reg--button,
-.Login--button {
-  margin-top: 24px;
+.Login--button,
+.CredList--button-getCreds,
+.UsersAddDiv--button,
+.UsersSubDiv--button,
+.UsersAddOrg--button,
+.UsersSubOrg--button,
+.UsersPerm--button,
+.CredListAdd--button,
+.CredListEdit--button {
+  font-weight: bold;
+  padding: 12px;
+  width: 100px;
+  border-radius: 12px;
+  background-color: #118ab2;
+  border: none;
+}
+
+.Login--button:hover,
+.Reg--button:hover,
+.CredList--button-getCreds:hover,
+.UsersAddDiv--button:hover,
+.UsersSubDiv--button:hover,
+.UsersAddOrg--button:hover,
+.UsersSubOrg--button:hover,
+.UsersPerm--button:hover,
+.CredListAdd--button:hover,
+.CredListEdit--button:hover {
+  background-color: #14799a;
+  border-color: #14799a;
+}
+
+.Login--form,
+.Reg--form,
+.Users--form,
+.Users--container,
+.CredList--container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
 }
 
 .CredList--table,
@@ -55,7 +136,6 @@
 }
 
 .CredList--button-getCreds {
-  margin-top: 24px;
 }
 
 .CredList--heading {

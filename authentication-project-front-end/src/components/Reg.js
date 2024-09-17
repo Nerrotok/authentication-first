@@ -85,17 +85,17 @@ class Reg extends React.Component {
     return (
       <div className="Reg--container">
         <form onSubmit={this.handleFormSubmit} className="Reg--form">
-          <label className="Reg--label">UserName:</label>
-          <br></br>
+          <label className="Reg--label">Username:</label>
+
           <input
             value={userName}
             onChange={this.handleUserName}
             className="Reg--input"
             required
           />
-          <br></br>
+
           <label className="Reg--label">Password:</label>
-          <br></br>
+
           <input
             type="password"
             value={pword}
@@ -103,9 +103,9 @@ class Reg extends React.Component {
             className="Reg--input"
             required
           />
-          <br></br>
+
           <label className="Reg--label">Re-Enter Password:</label>
-          <br></br>
+
           <input
             type="password"
             value={pword2}
@@ -113,7 +113,7 @@ class Reg extends React.Component {
             className="Reg--input"
             required
           />
-          <br></br>
+
           <button type="submit" className="Reg--button">
             Register
           </button>

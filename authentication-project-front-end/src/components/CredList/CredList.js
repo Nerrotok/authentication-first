@@ -90,28 +90,33 @@ class CredList extends React.Component {
       return;
     }
 
-    await fetch("http://localhost:8000/divrepos/creds", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify({
-        orgUnit,
-        division: div,
-      }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error ` + res.stats);
-        }
-        return res.json();
+    try {
+      await fetch("http://localhost:8000/divrepos/creds", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({
+          orgUnit,
+          division: div,
+        }),
       })
-      .then((result) => {
-        this.setState({
-          creds: result,
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error ` + res.stats);
+          }
+          return res.json();
+        })
+        .then((result) => {
+          this.setState({
+            creds: result,
+          });
         });
-      });
+    } catch (error) {
+      console.error("Error fetching credentials:", error);
+      alert("An error occurred while fetching credentials.");
+    }
   }
 
   render() {
@@ -144,7 +149,7 @@ class CredList extends React.Component {
             Select Org Unit and Division for operations:
           </h3>
           <label className="CredList--label">Organisational Unit</label>
-          <br />
+
           <select
             className="CredList--dropdown"
             value={orgUnit}
@@ -162,7 +167,7 @@ class CredList extends React.Component {
             {orgUnit && (
               <div className="CredList--container">
                 <label className="CredList--Label">Division</label>
-                <br />
+
                 <select
                   className="CredList--dropdown"
                   value={div || ""}

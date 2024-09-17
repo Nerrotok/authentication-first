@@ -60,25 +60,27 @@ class UsersAddOrg extends React.Component {
     return (
       <div className="Users--container">
         <form onSubmit={this.handleFormSub} className="Users--form">
-          <label>User Name:</label>
-          <br />
+          <label>Username:</label>
+
           <input
             onChange={this.handleNameChange}
             value={userName}
             type="text"
             required
           />
-          <br />
+
           <label>Org Unit to Add:</label>
-          <br />
+
           <input
             onChange={this.handleOrgChange}
             value={orgUnit}
             type="text"
             required
           />
-          <br />
-          <button type="submit">Submit Org Unit</button>
+
+          <button className="UsersAddOrg--button" type="submit">
+            Submit Org Unit
+          </button>
         </form>
       </div>
     );

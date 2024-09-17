@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="App--container">
-      <h1>Cool Tech Login Info App</h1>
+      <h1 className="App--heading">Cool Tech Login Info App</h1>
 
       <Navigation />
       <Logout

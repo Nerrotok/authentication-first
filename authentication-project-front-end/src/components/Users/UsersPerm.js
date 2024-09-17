@@ -61,17 +61,17 @@ class UsersPerm extends React.Component {
     return (
       <div className="Users--container">
         <form onSubmit={this.handleFormSub} className="Users--form">
-          <label>User Name:</label>
-          <br />
+          <label>Username:</label>
+
           <input
             onChange={this.handleNameChange}
             value={userName}
             type="text"
             required
           />
-          <br />
+
           <label>New Permission:</label>
-          <br />
+
           <select
             onChange={this.handlePermissionChange}
             value={newPermission}
@@ -82,8 +82,10 @@ class UsersPerm extends React.Component {
             <option value="manage">Management</option>
             <option value="admin">Admin</option>
           </select>
-          <br />
-          <button type="submit">Change Permissions</button>
+
+          <button className="UsersPerm--button" type="submit">
+            Change Permissions
+          </button>
         </form>
       </div>
     );

@@ -67,17 +67,17 @@ class Login extends React.Component {
     return (
       <div className="Login--container">
         <form onSubmit={this.handleSubmit} className="Login--form">
-          <label className="Reg--label">UserName:</label>
-          <br></br>
+          <label className="Reg--label">Username:</label>
+
           <input
             value={this.state.userName}
             onChange={this.handleUserName}
             className="Reg--input"
             required
           />
-          <br></br>
+
           <label className="Reg--label">Password:</label>
-          <br></br>
+
           <input
             type="password"
             value={this.state.pword}
@@ -85,7 +85,7 @@ class Login extends React.Component {
             className="Reg--input"
             required
           />
-          <br></br>
+
           <button type="submit" className="Login--button">
             Login
           </button>
